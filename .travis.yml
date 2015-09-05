@@ -11,5 +11,5 @@ rvm:
 script:
   - bundle exec httparty -f json "http://geojsonlint.com/validate?url=https://raw.githubusercontent.com/geobrando/sandbox/master/tests/geojson/good.geojson"
   - bundle exec httparty -f json "http://geojsonlint.com/validate?url=https://raw.githubusercontent.com/geobrando/sandbox/master/tests/geojson/bad.geojson"
-  - pwd
-  - ls
+  - cd tests/geojson
+  - geojsonhint --json good.geojson
