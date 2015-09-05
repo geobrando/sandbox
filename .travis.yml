@@ -1,5 +1,7 @@
 sudo: false
 language: ruby
+before_install:
+  - npm install -g geojsonhint
 cache: bundler
 branches:
   only:
@@ -9,3 +11,6 @@ rvm:
 script:
   - bundle exec httparty -f json "http://geojsonlint.com/validate?url=https://raw.githubusercontent.com/geobrando/sandbox/master/tests/geojson/good.geojson"
   - bundle exec httparty -f json "http://geojsonlint.com/validate?url=https://raw.githubusercontent.com/geobrando/sandbox/master/tests/geojson/bad.geojson"
+  - cd /tests/geojson
+  - geojsonhint --json good.geojson
+  - geojsonhint --json bad.geojson
