@@ -1,0 +1,10 @@
+sudo: false
+language: ruby
+cache: bundler
+branches:
+  only:
+    - master
+rvm:
+  - 2.1
+script:
+  - bundle exec httparty -f json "http://geojsonlint.com/validate?url=https://raw.githubusercontent.com/maptime/maptime.github.io/master/_data/chapters.json"
