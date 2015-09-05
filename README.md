@@ -1,2 +1,2 @@
 # sandbox
-A box of sand
+A box full of sand
