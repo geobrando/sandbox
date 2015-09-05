@@ -7,5 +7,5 @@ branches:
 rvm:
   - 2.1
 script:
-  - bundle exec httparty -f json https://raw.githubusercontent.com/geobrando/sandbox/master/tests/geojson/good.geojson"
-  - bundle exec httparty -f json https://raw.githubusercontent.com/geobrando/sandbox/master/tests/geojson/bad.geojson"
+  - bundle exec httparty -f json http://geojsonlint.com/validate?url=https://raw.githubusercontent.com/geobrando/sandbox/master/tests/geojson/good.geojson"
+  - bundle exec httparty -f json http://geojsonlint.com/validate?url=https://raw.githubusercontent.com/geobrando/sandbox/master/tests/geojson/bad.geojson"
