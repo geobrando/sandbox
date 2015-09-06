@@ -1,8 +1,8 @@
-baseurl:
+baseurl: /sandbox
 permalink: pretty
 markdown: kramdown
 paginate: 5
-repo: maptime.github.io
+repo: sandbox
 github_org: maptime
 maptime:
   chapter: Maptime HQ
