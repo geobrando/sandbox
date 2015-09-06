@@ -1,5 +1,5 @@
-- slug: openstreetmap
+openstreetmap: 
   name: OpenStreetMap
 
-- slug: humanitarian
+humanitarian:
   name: humanitarian aid
