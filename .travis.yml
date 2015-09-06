@@ -13,4 +13,4 @@ script:
   - bundle exec httparty -f json "http://geojsonlint.com/validate?url=https://raw.githubusercontent.com/geobrando/sandbox/master/tests/geojson/bad.geojson"
   - cd tests/geojson
   - geojsonhint --json good.geojson
-  - bash -e geojsonhint bad.geojson
+  - set -e; geojsonhint bad.geojson
