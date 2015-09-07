@@ -11,7 +11,7 @@ rvm:
 script:
   - bundle exec httparty -f json "http://geojsonlint.com/validate?url=https://raw.githubusercontent.com/geobrando/sandbox/master/tests/geojson/good.geojson"
   - bundle exec httparty -f json "http://geojsonlint.com/validate?url=https://raw.githubusercontent.com/geobrando/sandbox/master/tests/geojson/bad.geojson"
-  - result=$(geojsonhint --json < tests/geojson/good.geojson); echo "$result"; grep -F '"error":' <<< "$result"
-  - result=$(geojsonhint --json < tests/geojson/bad.geojson); echo "$result"; grep -F '"error":' <<< "$result"
+  - $(geojsonhint --json < good.geojson); echo "$result"; if grep -qF '"error":' <<< "$result"; then exit 1; fi
+  - $(geojsonhint --json < bad.geojson); echo "$result"; if grep -qF '"error":' <<< "$result"; then exit 1; fi
 
 
